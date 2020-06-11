@@ -1,6 +1,6 @@
 # Project Groove
 
-A collection of Wargroove mods I've been working on
+A Wargroove mod for re-balanced and enhanced competitive play compatible with game version 2.1
 
 Balance overseer:
 - Gimble
