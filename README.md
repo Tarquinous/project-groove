@@ -2,7 +2,7 @@
 
 A Wargroove mod for re-balanced and enhanced competitive play compatible with game version 2.1
 
-Balance overseer:
+Balance and Design:
 - Gimble
 
 Contributors:
