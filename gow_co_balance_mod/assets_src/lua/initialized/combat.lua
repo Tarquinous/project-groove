@@ -21,7 +21,11 @@ function Combat:solveDamage(weaponDamage, attackerEffectiveness, defenderEffecti
 
     -- Adjust RNG as follows: rng' = rng * rngMult + rngAdd
     -- This ensures that the average damage remains the same, but clamps the rng range to 10%
-    local rngMult = 1.0 / math.max(1.0, crit)
+    local rngTerrainMult = 0.0
+    if terrainDefenceBonus < 0.0 then
+        rngTerrainMult = -terrainDefenceBonus
+    end
+    local rngMult = (1.0 - rngTerrainMult) / math.max(1.0, crit)
     local rngAdd = (1.0 - rngMult) * 0.5
     local randomBonus = randomDamageMin + (randomDamageMax - randomDamageMin) * (randomValue * rngMult + rngAdd)
     local randomPercent = (randomValue - 0.5) * 2.0 * randomDamagePercent
@@ -29,7 +33,7 @@ function Combat:solveDamage(weaponDamage, attackerEffectiveness, defenderEffecti
     -- Compute the offence and defence based on the different stats
     local offence = weaponDamage + randomBonus
     local averageOffence = weaponDamage + (randomDamageMax - randomDamageMin) / 2.0
-    local defence = 1.0 - (defenderEffectiveness * math.max(0, terrainDefenceBonus) - math.max(0, -terrainDefenceBonus))
+    local defence = 1.0 - (math.min( 1.0, defenderEffectiveness) * math.max(0, terrainDefenceBonus) - math.max(0, -terrainDefenceBonus))
 
     -- Multiply everything together for final damage (in percent space, not unit health space - still needs to be multiplied by 100)
     local averageDamage = attackerEffectiveness * averageOffence * defence * multiplier * crit
