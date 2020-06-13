@@ -1,8 +1,10 @@
 local DoubleActUnits = require "buffs/double_act_units"
+local FreeAction = require "buffs/free_action"
 
 -- imported buffs should have a "unitClasses" field and a createFunction() field
 local BuffsToLoad = {
-    DoubleActUnits
+    DoubleActUnits,
+    FreeAction
 }
 
 -- loading game's original buffs first
