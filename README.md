@@ -9,8 +9,8 @@ Contributors:
 - Unicarn
 - CMAvelis
 
-### Changes:
-#### Commanders:
+## Changes:
+### Commanders:
 - Caesar 
     - charge speed: medium -> slow
 - Dark Mercia
@@ -37,7 +37,7 @@ Contributors:
 - Sigrid
     - 2-range teleport added to groove prior to targeting enemy
 
-#### Units:
+### Units:
 - Giant
     - movement type: walking -> riding (what knights use)
 - Mage
@@ -64,10 +64,18 @@ Contributors:
     - movement range: 8 -> 9
     - attack range: 2-4 -> 2-3
 
-#### Game Mechanics:
+### Game Mechanics:
 - Tile movement for "sailing" type units, i.e. non-merfolk naval
     - Ocean: 1 -> 2
     - Beach: 2 -> 3
     - Sea: 2 -> 3
     - Bridge: 2 -> 3
     - Reef: 4 -> 6
+
+
+## Implementation Notes
+ - All double actions (turtle, harpoon, warship) currently uses temp_units.lua to modify:
+    - Wait:onPostUpdateUnit
+    - buff_loader.lua
+ - Twins double-groove modifies the following:
+    - Verb:onPostUpdateUnit
