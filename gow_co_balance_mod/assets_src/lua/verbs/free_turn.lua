@@ -10,6 +10,7 @@ function FreeTurn:canExecuteAnywhere(unit)
     return false
   end
 
+  -- barges can't take free turn if they have a unit loaded
   return #unit.loadedUnits == 0
 end
 
