@@ -14,8 +14,10 @@ Contributors:
 - Caesar 
     - charge speed: medium -> slow
 - Dark Mercia
-    - charge speed: slow -> medium
-    - damage: 30 -> 25
+    - groove changes:
+        - charge speed: slow -> medium
+        - damage: 30 -> 25
+        - can overheal to 200, which lasts until the start of your next turn
 - Elodie 
     - charge speed: slow -> medium
 - Errol & Orla

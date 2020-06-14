@@ -1,10 +1,12 @@
 local DoubleActUnits = require "buffs/double_act_units"
 local FreeAction = require "buffs/free_action"
+local OverhealBadge = require "buffs/overheal_badge"
 
 -- imported buffs should have a "unitClasses" field and a createFunction() field
 local BuffsToLoad = {
     DoubleActUnits,
-    FreeAction
+    FreeAction,
+    OverhealBadge
 }
 
 -- loading game's original buffs first
