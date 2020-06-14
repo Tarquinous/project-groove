@@ -64,6 +64,8 @@ function Diplomacy:execute(unit, targetPos, strParam, path)
         endPos = path[#path]
     end
     local targetUnit = Wargroove.getUnitAt(targetPos);
+    Wargroove.changeMoney(targetUnit.playerId, -100)
+    Wargroove.changeMoney(unit.playerId, 100)
     targetUnit:setHealth(100, unit.id)
     targetUnit.playerId = unit.playerId
     Wargroove.updateUnit(targetUnit)
