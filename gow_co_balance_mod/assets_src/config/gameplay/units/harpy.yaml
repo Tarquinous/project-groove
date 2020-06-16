@@ -13,7 +13,7 @@ weapons:
       archer: 0.75
       soldier: 0.65
       villager: 0.65
-      spearman: 0.45
+      spearman: 0.50
       dog: 0.55
       wagon: 0.35
       knight: 0.75
@@ -24,9 +24,11 @@ weapons:
       dragon: 0.35
       mage: 0.25
       harpy: 0.55
-      structure: 0.45
+      structure: 0.5
       giant: 0.10
       commander: 0.15
+      rifleman: 0.75
+      thief: 0.65
 
       warship: 0.45
       harpoonship: 0.25

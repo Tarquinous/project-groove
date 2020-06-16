@@ -11,7 +11,7 @@ weapons:
       archer: 0.65
       soldier: 0.55
       villager: 0.55
-      spearman: 0.35
+      spearman: 0.40
       dog: 0.45
       wagon: 0.35
       knight: 0.15
@@ -22,6 +22,8 @@ weapons:
       commander: 0.10
       ballista: 0.35
       giant: 0.05
+      rifleman: 0.65
+      thief: 0.95
 
 unitClasses:
   - id: soldier
