@@ -63,7 +63,7 @@ terrains:
       volcano: terrain_name_reef_lava
     biomeDescriptions:
       volcano: terrain_description_lava
-    defenceBonus: 2
+    defenceBonus: 3  # from 2
     movementCost:
       sailing: 6  # from 4
       flying: 1
