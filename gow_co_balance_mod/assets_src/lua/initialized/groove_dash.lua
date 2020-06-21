@@ -12,7 +12,7 @@ Dash.lastLocation = {}
 Dash.endFacing = -1
 
 local startingDamage = 0.5
-local deltaPerJump = -0.05
+local deltaPerJump = -0.03
 
 function Dash:init()
     OldDash.execute = Dash.execute
@@ -411,7 +411,7 @@ function Dash:execute(unit, targetPos, strParam, path)
         end
         lastPosition = target
 
-        currentDamage = currentDamage + deltaPerJump
+        currentDamage = math.max(0, currentDamage + deltaPerJump)
     end
 
     Wargroove.waitTime(0.5)
