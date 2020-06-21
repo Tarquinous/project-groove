@@ -18,7 +18,7 @@ Contributors:
     - groove changes:
         - charge speed: slow -> medium
         - damage: 30 -> 25
-        - can overheal to 200, which lasts until the start of your next turn
+        - can overheal to 200 HP, which lasts until the start of your next turn
 - Elodie 
     - charge speed: slow -> medium
 - Errol & Orla
@@ -26,6 +26,8 @@ Contributors:
         - both grooves may be used once groove is charged, instead of one or the other
         - Scorching Fire is shown as the only groove, then Cooling Water appears as an option afterward (due to simplicity of programming it this way)
         - choosing "Wait" while the Twins can use Cooling Water will reset groove charge to 0 (use it or lose it)
+- Mercia
+    - groove can now overheal units to 110 HP
 - Mercival
     - groove replaced: Diplomacy
         - Fast charge

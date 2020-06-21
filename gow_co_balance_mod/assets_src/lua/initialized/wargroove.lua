@@ -35,12 +35,29 @@ function Wargroove:init()
     end
 end
 
+
+function Wargroove.updateUnit(unit)
+    -- set overhealing in state
+    -- if unit.health > 100 then
+    --     OldWargroove.setUnitState(unit, "overheal", unit.health)
+    -- end
+    CopyWargroove.updateUnit(unit)
+end
+
+-- performed on initial load, rejoin suspended game
+function Wargroove.getAllUnitIds()
+
+
+    return CopyWargroove.getAllUnitIds()
+end
+
 function Wargroove.getUnitById(unitId)
     assert(unitId ~= nil)
 
     local result = CopyWargroove.getUnitById(unitId)
-    assert(unitId ~= nil)
-    print(inspect(result))
+    if result == nil then
+        return nil
+    end
 
     -- allow overhealing in some instances
     local function unitSetHealth(self, health, attackerId, source)
