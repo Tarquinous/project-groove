@@ -64,8 +64,8 @@ grooves:
   - id: diplomacy   # giving this to Mercival
     name: groove_name_diplomacy
     description: groove_description_diplomacy
-    maxCharge: 150
-    chargePerUse: 150
+    maxCharge: 100
+    chargePerUse: 100
     chargeBy:
       endOfTurn: 10
       attack: 20
