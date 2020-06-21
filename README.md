@@ -7,6 +7,7 @@ Balance and Design:
 
 Contributors:
 - Unicarn
+- FlySniper
 - CMAvelis
 
 ## Changes:
@@ -25,8 +26,9 @@ Contributors:
         - choosing "Wait" while the Twins can use Cooling Water will reset groove charge to 0 (use it or lose it)
 - Mercival
     - groove replaced: Diplomacy
-        - Medium charge
+        - Fast charge
         - 2 range: Convert an enemy structure to yours at full HP
+        - steals 100 gold from enemy as well
         - HQ not included, but production buildings convert with action ready
 - Nuru
     - groove can no longer summon "non-formation" units:
@@ -66,6 +68,7 @@ Contributors:
     - attack range: 2-4 -> 2-3
 
 ### Game Mechanics:
+#### Terrain:
 - Tile movement for "sailing" type units, i.e. non-merfolk naval
     - Ocean: 1 -> 2
     - Beach: 2 -> 3
@@ -73,6 +76,10 @@ Contributors:
     - Bridge: 2 -> 3
     - Reef: 4 -> 6
 - Reef terrain defense: 2 -> 3
+
+#### Damage Calculations:
+- Damage variance capped to +/- 10% of the median damage, while keeping the game's +/- 5HP cap
+    - e.g. for average damage 20, the range will now be 18-22 instead of 15-25
 
 
 ## Implementation Notes
