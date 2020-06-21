@@ -33,7 +33,8 @@ Contributors:
         - Golems, Trebuchets, Ballista, Wagons, Dragons, Balloons, Warships, Harpoon Ships and Barges
         - "non-formation" refers to their appearance in fight animations as a single unit, instead of multiple
 - Ryota
-    - groove damage ramp per jump: +5% -> -5%
+    - groove damage ramp per jump: +5% -> -3%
+    - damage floor set to 0
 - Sigrid
     - 2-range teleport added to groove prior to targeting enemy
 
