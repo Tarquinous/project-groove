@@ -72,6 +72,7 @@ Contributors:
     - Sea: 2 -> 3
     - Bridge: 2 -> 3
     - Reef: 4 -> 6
+- Reef terrain defense: 2 -> 3
 
 
 ## Implementation Notes
