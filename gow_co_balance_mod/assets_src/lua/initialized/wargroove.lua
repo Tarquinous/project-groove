@@ -8,25 +8,11 @@ wargrooveAPI = nil
 local helpers = require "helpers"
 local inspect = require "inspect"
 
-function deepcopy(orig)
-    local orig_type = type(orig)
-    local copy
-    if orig_type == 'table' then
-        copy = {}
-        for orig_key, orig_value in next, orig, nil do
-            copy[deepcopy(orig_key)] = deepcopy(orig_value)
-        end
-        setmetatable(copy, deepcopy(getmetatable(orig)))
-    else -- number, string, boolean, etc
-        copy = orig
-    end
-    return copy
-end
-
-local CopyWargroove = deepcopy(OldWargroove)
+local CopyWargroove = helpers.deepcopy(OldWargroove)
 
 function Wargroove:init()
     print('===Wargroove.init')
+    OldWargroove.syncedClient = false
     for k,v in pairs(Wargroove) do
         if (k ~= 'debugWrap') and (type(v) == 'function') then
             print(k)
@@ -35,20 +21,70 @@ function Wargroove:init()
     end
 end
 
-
 function Wargroove.updateUnit(unit)
+    print('===Wargroove.updateUnit')
     -- set overhealing in state
-    -- if unit.health > 100 then
-    --     OldWargroove.setUnitState(unit, "overheal", unit.health)
-    -- end
+    local hp = unit.health -- conversion may be unnecessary with below
+
+    if type(hp) == "string" then
+        print('hpstring', hp)
+        if hp == "" then
+            unit.health = OldWargroove.getUnitState(unit, "overheal")
+            print(inspect(unit))
+            CopyWargroove.updateUnit(unit)
+            return
+        end
+    end
+
+    -- local hp = tonumber(unit.health) -- conversion may be unnecessary with below
+    if hp > 100 then
+        OldWargroove.setUnitState(unit, "overheal", hp)
+    else
+        OldWargroove.setUnitState(unit, "overheal", nil)
+    end
+    print('in update')
+    print('hp:  ', hp)
+
+    print(inspect(unit))
     CopyWargroove.updateUnit(unit)
 end
 
--- performed on initial load, rejoin suspended game
+function Wargroove.syncClient(allUnitIds)
+    print('===Wargroove.syncClient')
+    print('allunits', inspect(allUnitIds))
+    for i, id in ipairs(allUnitIds) do
+        print(id)
+        local unit = OldWargroove.getUnitById(id)
+        print(inspect(unit))
+        local overhealState = OldWargroove.getUnitState(unit, "overheal")
+        print("overhealState", overhealState)
+        if (overhealState ~= nil and overhealState ~= "") then
+            if tonumber(overhealState) then
+                unit.health = tonumber(overhealState)
+            else
+                unit.health = overhealState
+            end
+            print('in syncClient')
+            print(inspect(unit))
+            OldWargroove.updateUnit(unit)
+        end
+        
+    end
+    
+end
+
+-- sync on initial load, rejoin suspended game
 function Wargroove.getAllUnitIds()
+    print('===Wargroove.getAllUnitIds')
+    print('synced?', OldWargroove.syncedClient)
+    local allUnitIds = CopyWargroove.getAllUnitIds()
+    print('allunitids', inspect(allUnitIds))
+    if (helpers.tableLength(allUnitIds) > 0 and OldWargroove.syncedClient == false) then
+        OldWargroove.syncedClient = true
+        OldWargroove.syncClient(allUnitIds)
+    end    
 
-
-    return CopyWargroove.getAllUnitIds()
+    return allUnitIds
 end
 
 function Wargroove.getUnitById(unitId)
