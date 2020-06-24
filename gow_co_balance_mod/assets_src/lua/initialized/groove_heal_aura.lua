@@ -35,7 +35,10 @@ function Heal:execute(unit, targetPos, strParam, path)
         local u = Wargroove.getUnitAt(pos)
         local uc = u.unitClass
         if u ~= nil and Wargroove.areAllies(u.playerId, unit.playerId) and (not uc.isStructure) then
-            u:setHealth(u.health + maxHealAmount, unit.id, "mercia_groove")
+		--Only heals when below 110 hp to prevent removing Overheal from Dark Mercia
+            if u.health < 110 then
+				u:setHealth(u.health + maxHealAmount, unit.id, "mercia_groove")
+			end
             Wargroove.updateUnit(u)
             Wargroove.spawnMapAnimation(pos, 0, "fx/heal_unit")
             Wargroove.playMapSound("unitHealed", pos)

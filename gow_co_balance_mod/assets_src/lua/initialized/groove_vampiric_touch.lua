@@ -232,7 +232,10 @@ function VampiricTouch:execute(unit, targetPos, strParam, path)
     
     local targetUnit = Wargroove.getUnitAt(groovedUnitPosition)
     if targetUnit.health then
-        unit:setHealth(unit.health + targetUnit.health, unit.id)
+		--Only heals when below 100 hp to prevent removing Overheal. Relevant in scenarios where a player has both Sigrid and Mercia
+		if unit.health < 100 then
+			unit:setHealth(unit.health + targetUnit.health, unit.id)
+		end
         targetUnit:setHealth(0, unit.id)
         Wargroove.updateUnit(targetUnit)
         Wargroove.playUnitAnimation(targetUnit.id, "hit")
