@@ -170,7 +170,7 @@ function VampiricTouch:canExecuteWithTarget(unit, endPos, targetPos, strParam)
 
     local u = Wargroove.getUnitAt(targetPos)
     local uc = Wargroove.getUnitClass("soldier")
-    return (u == nil or u.id == unit.id) and Wargroove.canStandAt("soldier", targetPos)
+    return u.id == unit.id or (u == nil and Wargroove.canStandAt("soldier", targetPos))
 
 end
     -- -- this all goes into a different function FROM here
