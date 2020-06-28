@@ -88,7 +88,7 @@ function VampiricTouch:getTargetType()
         return "unit" 
     end
 
-    return "empty"
+    return "all"
 end
 
 function VampiricTouch:getTargets(unit, endPos, strParam)
@@ -170,8 +170,11 @@ function VampiricTouch:canExecuteWithTarget(unit, endPos, targetPos, strParam)
 
     local u = Wargroove.getUnitAt(targetPos)
     local uc = Wargroove.getUnitClass("soldier")
-    return u.id == unit.id or (u == nil and Wargroove.canStandAt("soldier", targetPos))
 
+    if u == nil then
+        return Wargroove.canStandAt("soldier", targetPos)
+    end
+    return u.id == unit.id
 end
     -- -- this all goes into a different function FROM here
     -- local targetUnit = Wargroove.getUnitAt(targetPos)
