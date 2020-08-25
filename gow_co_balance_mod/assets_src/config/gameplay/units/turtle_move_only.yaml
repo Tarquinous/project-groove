@@ -19,7 +19,7 @@ unitClasses:
     isHidden: true
     isRecruitable: false
     canAttack: false
-    classIconSpritesheet: ui_GoWBalanceMod
+    classIconSpritesheet: ui_ProjectGroove
     codexClass: turtle
     appearsInLists: false
     inPalettes: false

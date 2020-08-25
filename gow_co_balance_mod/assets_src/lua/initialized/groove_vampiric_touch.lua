@@ -88,7 +88,7 @@ function VampiricTouch:getTargetType()
         return "unit" 
     end
 
-    return "empty"
+    return "all"
 end
 
 function VampiricTouch:getTargets(unit, endPos, strParam)
@@ -170,8 +170,11 @@ function VampiricTouch:canExecuteWithTarget(unit, endPos, targetPos, strParam)
 
     local u = Wargroove.getUnitAt(targetPos)
     local uc = Wargroove.getUnitClass("soldier")
-    return (u == nil or u.id == unit.id) and Wargroove.canStandAt("soldier", targetPos)
 
+    if u == nil then
+        return Wargroove.canStandAt("soldier", targetPos)
+    end
+    return u.id == unit.id
 end
     -- -- this all goes into a different function FROM here
     -- local targetUnit = Wargroove.getUnitAt(targetPos)
@@ -232,7 +235,10 @@ function VampiricTouch:execute(unit, targetPos, strParam, path)
     
     local targetUnit = Wargroove.getUnitAt(groovedUnitPosition)
     if targetUnit.health then
-        unit:setHealth(unit.health + targetUnit.health, unit.id)
+		--Only heals when below 100 hp to prevent removing Overheal. Relevant in scenarios where a player has both Sigrid and Mercia
+		if unit.health < 100 then
+			unit:setHealth(unit.health + targetUnit.health, unit.id)
+		end
         targetUnit:setHealth(0, unit.id)
         Wargroove.updateUnit(targetUnit)
         Wargroove.playUnitAnimation(targetUnit.id, "hit")
