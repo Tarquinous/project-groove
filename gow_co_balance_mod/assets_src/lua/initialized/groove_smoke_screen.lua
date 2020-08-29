@@ -7,20 +7,24 @@ local SmokeScreen = GrooveVerb:new()
 
 
 function SmokeScreen:init()
-    -- OldSmokeScreen.execute = SmokeScreen.execute
-end
-
-function SmokeScreen:getMaximumRange(unit, endPos)
-    return 96
-end
-
-function SmokeScreen:getTargetType()
-  return "all"
+    OldSmokeScreen.canExecuteWithTarget = SmokeScreen.canExecuteWithTarget
+    OldSmokeScreen.execute = SmokeScreen.execute
+    OldSmokeScreen.onPostUpdateUnit = SmokeScreen.onPostUpdateUnit
 end
 
 function SmokeScreen:canExecuteWithTarget(unit, endPos, targetPos, strParam)
     if not self:canSeeTarget(targetPos) then
         return false
+    end
+
+    local u = Wargroove.getUnitAt(targetPos)
+
+    if u ~= nil then
+        return false
+    end
+
+    if u == nil then
+        return Wargroove.canStandAt("soldier", targetPos)
     end
 
     return true
@@ -46,55 +50,17 @@ function SmokeScreen:execute(unit, targetPos, strParam, path)
     table.insert(startingState, pos)
     Wargroove.spawnUnit(unit.playerId, {x = -100, y = -100}, "smoke_producer", false, "", startingState)
     
+    unit.pos = { x = targetPos.x, y = targetPos.y }
+
+    Wargroove.updateUnit(unit)
+    -- TODO: disappear in smoke, reappear after smoke cloud is made
 
     Wargroove.waitTime(1.0)
 end
 
-function SmokeScreen:generateOrders(unitId, canMove)
-    local orders = {}
-
-    local unit = Wargroove.getUnitById(unitId)
-    local unitClass = Wargroove.getUnitClass(unit.unitClassId)
-    local movePositions = {}
-    if canMove then
-        movePositions = Wargroove.getTargetsInRange(unit.pos, unitClass.moveRange, "empty")
-    end
-    table.insert(movePositions, unit.pos)
-
-    for i, pos in pairs(movePositions) do
-        local targets = Wargroove.getTargetsInRangeAfterMove(unit, pos, pos, 1, "empty")
-        for j, target in pairs(targets) do
-            if target ~= pos and self:canSeeTarget(target) then
-                orders[#orders+1] = {targetPosition = target, strParam = "", movePosition = pos, endPosition = pos}
-            end
-        end
-    end
-
-    return orders
-end
-
-function SmokeScreen:getScore(unitId, order)
-    local unit = Wargroove.getUnitById(unitId)
-    local targets = Wargroove.getTargetsInRangeAfterMove(unit, order.endPosition, order.targetPosition, 2, "unit")
-
-    local opportunityCost = -1
-    local totalScore = 0
-    local maxScore = 300
-
-    for i, pos in ipairs(targets) do
-        local u = Wargroove.getUnitAt(pos)
-        if u ~= nil then
-            local uc = Wargroove.getUnitClass(u.unitClassId)
-            if not Wargroove.areEnemies(unit.playerId, u.playerId) then
-                totalScore = totalScore + uc.cost
-            else
-                totalScore = totalScore - uc.cost
-            end
-        end
-    end
-    
-    local score = totalScore/maxScore + opportunityCost
-    return {score = score, introspection = {{key = "totalScore", value = totalScore}}}
+function SmokeScreen:onPostUpdateUnit(unit, targetPos, strParam, path)
+    GrooveVerb.onPostUpdateUnit(self, unit, targetPos, strParam, path)
+    unit.pos = targetPos
 end
 
 return SmokeScreen
