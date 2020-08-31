@@ -45,11 +45,11 @@ function Buffs.smoke_producer(Wargroove, unit)
     end
     local center = { x = tonumber(vals[1]), y = tonumber(vals[2])}
 
-    local radius = 2
+    local radius = 1 -- edited to 1 in 0.7beta.3
     
     if (not Wargroove.isSimulating()) then
         local effectPositions = Wargroove.getTargetsInRange(center, radius, "all")
-        Wargroove.displayBuffVisualEffectAtPosition(unit.id, center, unit.playerId, "units/commanders/vesper/smoke", "idle", 0.3, effectPositions, "above_units")
+        Wargroove.displayBuffVisualEffectAtPosition(unit.id, center, unit.playerId, "units/commanders/twins/area_damage", "idle_" .. tostring(radius), 0.3, effectPositions, "", {}, true)
 
         if (radius > 0) then
             local firePositions = Wargroove.getTargetsInRange(center, radius, "all")
