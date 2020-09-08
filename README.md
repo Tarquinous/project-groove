@@ -28,7 +28,7 @@ Contributors:
         - Scorching Fire is shown as the only groove, then Cooling Water appears as an option afterward (due to simplicity of programming it this way)
         - choosing "Wait" while the Twins can use Cooling Water will reset groove charge to 0 (use it or lose it)
 - Mercia
-    - groove can now **overheal** units (and self) to a maximum of 110 HP
+    - groove can now **overheal** units (and self) to a maximum of 105 HP
         - see Game Mechanics for information on Overhealing
 - Mercival
     - groove replaced: Diplomacy
