@@ -45,6 +45,10 @@ Contributors:
     - damage floor set to 0
 - Sigrid
     - 2-range teleport added to groove prior to targeting enemy
+- Vesper
+    - groove change:
+        - Vesper now teleports to the targeted location
+        - smoke AoE range 2 -> 1
 
 ### Units:
 - Giant
@@ -56,6 +60,8 @@ Contributors:
 - Trebuchet
     - min range: 2 -> 4
     - structure base damage: 0.85 -> 0.65
+- Thief
+    - Steal can now target transports, which will take it over AND kill the thief
 
 - Barge, Turle, Harpoon Ship, Warship
     - New mechanic: If the unit's action is to "wait", it gets an additional move-only turn
