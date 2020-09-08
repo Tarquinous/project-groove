@@ -15,7 +15,7 @@ end
 
 function Actions.overhealStateUpdate(context)
     print('==Actions.overhealStateUpdate')
-    print(inspect(context))
+    -- print(inspect(context))
 
     for playerId=0,1 do
         local allUnits = Wargroove.getAllUnitsForPlayer(playerId, true)
@@ -24,7 +24,7 @@ function Actions.overhealStateUpdate(context)
             print("overhealstate", overhealState)
             print("health", u.health)
             if (u.health <= 100) then
-                print('= hp set to 0')
+                print('= overheal state set to 0')
                 Wargroove.setUnitState(u, "overheal", 0)
                 Wargroove.updateUnit(u)
             end
