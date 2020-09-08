@@ -58,7 +58,7 @@ function Wargroove.syncClient(allUnitIds)
         print(inspect(unit))
         local overhealState = OldWargroove.getUnitState(unit, "overheal")
         print("overhealState", overhealState)
-        if (overhealState ~= nil and overhealState ~= "") then
+        if (overhealState ~= nil and overhealState ~= "" and overhealState ~= "0") then
             if tonumber(overhealState) then
                 unit.health = tonumber(overhealState)
             else
@@ -99,7 +99,7 @@ function Wargroove.getUnitById(unitId)
     local function unitSetHealth(self, health, attackerId, source)
         local maxHp = 100
         if source == "mercia_groove" then
-            maxHp = 110
+            maxHp = 105
         end
         if source == "dm_groove" and self.unitClassId == "commander_darkmercia" then
             maxHp = 200
