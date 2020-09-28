@@ -1,14 +1,18 @@
 local Wargroove = require "wargroove/wargroove"
 local Verb = require "wargroove/verb"
 local OldSpellHeal = require "verbs/spell_heal"
+local ManaUtils = require "mana/mana_utils"
 
 local SpellHeal = Verb:new()
 
 function SpellHeal:init()
 	OldSpellHeal.execute = SpellHeal.execute
+    OldSpellHeal.canExecuteAnywhere = SpellHeal.canExecuteAnywhere
+    OldSpellHeal.spellCost = SpellHeal.spellCost
+    OldSpellHeal.getCostAt = SpellHeal.getCostAt
 end
 
-local spellCost = 300
+local spellCost = 1
 local healAmount = 20
 local costScoreFactor = 0.5
 
@@ -24,7 +28,7 @@ end
 
 
 function SpellHeal:canExecuteAnywhere(unit)
-    return Wargroove.getMoney(unit.playerId) >= spellCost
+    return ManaUtils:manaCount(unit.playerId) >= spellCost
 end
 
 
@@ -34,7 +38,7 @@ end
 
 
 function SpellHeal:execute(unit, targetPos, strParam, path)
-    Wargroove.changeMoney(unit.playerId, -spellCost)
+    ManaUtils:consumeMana(unit.playerId)
     local targets = Wargroove.getTargetsInRange(targetPos, 1, "unit")
 
     local function distFromTarget(a)

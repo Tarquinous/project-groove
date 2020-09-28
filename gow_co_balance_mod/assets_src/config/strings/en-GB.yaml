@@ -10,6 +10,16 @@ en-GB:
   unit_name_new_archer_heavensong: "New Hawkbow"
   unit_name_new_archer_floran: "New Shooter"
 
+  # Mana Crystal
+  structure_name_mana_crystal: "Mana Crystal"
+  unit_description_mana_crystal: "A crystal which increases the owner's mana by 1"
+
+  # Unused Mana Indicator
+  structure_name_mana_indicator: "Mana Crystal"
+  unit_description_mana_indicatorl: "A crystal which increases the owner's mana by 1"
+  groove_name_indicate_mana: "None"
+  groove_description_indicate_mana: "None"
+
   # Triggers
   trigger_action_name_set_state: "Set State"                                                                            # The name
   trigger_action_description_set_state: "Sets the unit state."                                                          # The general description
