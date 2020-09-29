@@ -72,4 +72,11 @@ grooves:
       counter: 10
       kill: 30
     verb: groove_diplomacy
+
+  - id: indicate_mana   # mana amount indicator
+    name: groove_name_indicate_mana
+    description: groove_description_indicate_mana
+    maxCharge: 100
+    chargePerUse: 0
+    verb: groove_empty
 ...

@@ -170,6 +170,8 @@ function Events.populateTriggerList()
     local referenceTrigger = triggerList[1] -- Events.getTrigger("$trigger_default_defeat_hq")
     -- add my triggers here
     Events.addTriggerToList(Triggers.getOverhealTrigger(referenceTrigger))
+    Events.addTriggerToList(Triggers.getManaInit(referenceTrigger))
+    Events.addTriggerToList(Triggers.getManaCount(referenceTrigger))
     
     local Actions = require("triggers/actions")
     local Conditions = require("triggers/conditions")
