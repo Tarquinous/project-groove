@@ -115,7 +115,7 @@ Contributors:
     - When consumed, it's turn is spent
     - All mana is restored at the start of the player's turn
 - A crystal indicator will now display your total mana on your HQ
-- All Emeric crystals are transformed into mana crystals at the start of the first turn (Use unofficial mods to spawn)
+- All villagers are transformed into mana crystals at the start of the first turn
 
 
 ## Implementation Notes
