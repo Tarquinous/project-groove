@@ -32,7 +32,7 @@ function ManaUtils:init()
         if unit.unitClassId == "mana_crystal" then
             table.insert(ManaUtils.manaState, unit.pos)
         end
-        if unit.unitClassId == "crystal" then
+        if unit.unitClassId == "villager" then
             unit.unitClassId = "mana_crystal"
             table.insert(ManaUtils.manaState, unit.pos)
             Wargroove.updateUnit(unit)
