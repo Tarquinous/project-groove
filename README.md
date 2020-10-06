@@ -51,8 +51,15 @@ Contributors:
         - smoke AoE range 2 -> 1
 
 ### Units:
+
+- Archer
+    - damage edits
+        - spears 0.6 -> 0.65
 - Giant
     - movement type: walking -> riding (what knights use)
+- Harpy
+    - damage edits
+        - spears 0.45 -> 0.5
 - Mage
     - damage edits
         - harpy 1.4 -> 1.3
@@ -62,7 +69,9 @@ Contributors:
     - structure base damage: 0.85 -> 0.65
 - Thief
     - Steal can now target transports, which will take it over AND kill the thief
-
+- Soldier
+    - damage edits
+        - spears 0.35 -> 0.40
 - Barge, Turle, Harpoon Ship, Warship
     - New mechanic: If the unit's action is to "wait", it gets an additional move-only turn
         - Turtle move-only movement range: 6  (rest of ships have same mvt for 1st and 2nd action)
