@@ -9,7 +9,7 @@ codex:
   pages:
   - pageType: page
     layoutType: animation
-    animation: ui/codex/content/rules_win
+    animation: ui/codex/content/projectgroove_overheal.ase
     title: codex_rules_projectgroove_overheal_title
     text: codex_rules_projectgroove_overheal_text
 ...
