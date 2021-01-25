@@ -35,4 +35,9 @@ en-GB:
 
   groove_name_diplomacy: Diplomacy
   
+  # CODEX
+  # Overhealing
+  codex_projectgroove_overheal: "Overheal"
+  codex_rules_projectgroove_overheal_title: "Overhealing\n(Project Groove mod)"
+  codex_rules_projectgroove_overheal_text: "Overhealing is a system of giving units above 100% health through some abilities. Overhealed units have the following attributes:\n> Healing will not restore their health above 100%.\n> Damage dealt increases proportional to their health.\n> Defence is restricted to the effects of 100% health.\n> Commanders will immediately return to 100% health on the start of their next turn, but will maintain the health for the duration of their."
 ...
