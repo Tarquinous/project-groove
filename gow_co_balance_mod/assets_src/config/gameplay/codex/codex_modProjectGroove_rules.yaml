@@ -1,0 +1,15 @@
+---
+codex:
+
+- id: rules_projectgroove_overheal
+  category: rules
+  name: codex_projectgroove_overheal
+  icon:
+    image: ui/codex/icons/icon_modProjectGroove_rules.png
+  pages:
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/rules_win
+    title: codex_rules_projectgroove_overheal_title
+    text: codex_rules_projectgroove_overheal_text
+...
