@@ -11,5 +11,44 @@ codex:
     layoutType: animation
     animation: ui/codex/content/projectgroove_overheal
     title: codex_rules_projectgroove_overheal_title
-    text: codex_rules_projectgroove_overheal_text
+    text: codex_rules_projectgroove_overheal_text_1
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/projectgroove_overheal
+    title: codex_rules_projectgroove_overheal_title
+    text: codex_rules_projectgroove_overheal_text_2
+    
+- id: rules_projectgroove_mana
+  category: rules
+  name: codex_projectgroove_mana
+  icon:
+    image: ui/codex/icons/icon_modProjectGroove_rules.png
+  pages:
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/projectgroove_mana
+    title: codex_rules_projectgroove_mana_title
+    text: codex_rules_projectgroove_mana_text_1
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/projectgroove_mana
+    title: codex_rules_projectgroove_mana_title
+    text: codex_rules_projectgroove_mana_text_2
+    
+- id: rules_projectgroove_rng
+  category: rules
+  name: codex_projectgroove_rng
+  icon:
+    image: ui/codex/icons/icon_modProjectGroove_rules.png
+  pages:
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/projectgroove_rng
+    title: codex_rules_projectgroove_rng_title
+    text: codex_rules_projectgroove_rng_text_1
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/projectgroove_rng
+    title: codex_rules_projectgroove_rng_title
+    text: codex_rules_projectgroove_rng_text_2
 ...
