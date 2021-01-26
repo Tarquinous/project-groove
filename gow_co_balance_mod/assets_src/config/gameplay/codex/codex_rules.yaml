@@ -11,7 +11,12 @@ codex:
     layoutType: animation
     animation: ui/codex/content/projectgroove_overheal
     title: codex_rules_projectgroove_overheal_title
-    text: codex_rules_projectgroove_overheal_text
+    text: codex_rules_projectgroove_overheal_text_1
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/projectgroove_overheal
+    title: codex_rules_projectgroove_overheal_title
+    text: codex_rules_projectgroove_overheal_text_2
     
 - id: rules_projectgroove_mana
   category: rules
@@ -23,5 +28,10 @@ codex:
     layoutType: animation
     animation: ui/codex/content/projectgroove_mana
     title: codex_rules_projectgroove_mana_title
-    text: codex_rules_projectgroove_mana_text
+    text: codex_rules_projectgroove_mana_text_1
+  - pageType: page
+    layoutType: animation
+    animation: ui/codex/content/projectgroove_mana
+    title: codex_rules_projectgroove_mana_title
+    text: codex_rules_projectgroove_mana_text_2
 ...
