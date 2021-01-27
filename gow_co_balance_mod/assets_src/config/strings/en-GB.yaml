@@ -55,7 +55,14 @@ en-GB:
   codex_rules_projectgroove_rng_text_2: "Like before, final damage values are rounded from decimal values.\nExample:\n> 34 avg. results in 31.6 - 38.4, giving a range of 32 - 38."
 
   # CODEX / UNITS
+  # Thief
   unit_description_thief: "A vulnerable unit that can steal 300 gold from enemy buildings, 1000 from a Stronghold, or take over a transport!"
   codex_unit_thief_critical_text: "Thieves are able to instantly neutralise structures, and as such, excel at threatening dangerous areas of the battlefield alone. They are often at their most effective when diverting attention away from the frontlines, and when used effectively, they can turn the economic tide of battle. Additionally, thieves can take over enemy transports, working as a detterent to potential supply lines or the use of cheap blockades."
   
+  # Barge
+  unit_description_travelboat: "Boats able to transport all ground units across water. Able to move twice when empty."
+  codex_unit_travelboat_critical_text: "The Barge is primarily used to transport ground units across sea tiles. Care must be taken, as Barges are vulnerable, and loaded units will be lost if the boat is defeated. However, with its extremely mobile speed when unoccupied, they make effective blockades. A Barge can also move towards a beach before units load onto it, allowing for rapid transportation with only a single vehicle."
+
+  # Turtle
+  unit_description_turtle: "Powerful naval unit, built to conquer the water. Half movement after waiting. Critical hit when in deep sea."
 ...
