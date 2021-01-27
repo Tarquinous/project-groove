@@ -8,12 +8,12 @@ codex:
     image: ui/codex/icons/icon_modProjectGroove_rules.png
   pages:
   - pageType: page
-    layoutType: animation
+    layoutType: no_image # Animation type causes crashes. Update when workaround is discovered or issue is resolved.
     animation: ui/codex/content/projectgroove_overheal
     title: codex_rules_projectgroove_overheal_title
     text: codex_rules_projectgroove_overheal_text_1
   - pageType: page
-    layoutType: animation
+    layoutType: no_image # Animation type causes crashes. Update when workaround is discovered or issue is resolved.
     animation: ui/codex/content/projectgroove_overheal
     title: codex_rules_projectgroove_overheal_title
     text: codex_rules_projectgroove_overheal_text_2
@@ -25,12 +25,12 @@ codex:
     image: ui/codex/icons/icon_modProjectGroove_rules.png
   pages:
   - pageType: page
-    layoutType: animation
+    layoutType: no_image # Animation type causes crashes. Update when workaround is discovered or issue is resolved.
     animation: ui/codex/content/projectgroove_mana
     title: codex_rules_projectgroove_mana_title
     text: codex_rules_projectgroove_mana_text_1
   - pageType: page
-    layoutType: animation
+    layoutType: no_image # Animation type causes crashes. Update when workaround is discovered or issue is resolved.
     animation: ui/codex/content/projectgroove_mana
     title: codex_rules_projectgroove_mana_title
     text: codex_rules_projectgroove_mana_text_2
@@ -42,12 +42,12 @@ codex:
     image: ui/codex/icons/icon_modProjectGroove_rules.png
   pages:
   - pageType: page
-    layoutType: animation
+    layoutType: no_image # Animation type causes crashes. Update when workaround is discovered or issue is resolved.
     animation: ui/codex/content/projectgroove_rng
     title: codex_rules_projectgroove_rng_title
     text: codex_rules_projectgroove_rng_text_1
   - pageType: page
-    layoutType: animation
+    layoutType: no_image # Animation type causes crashes. Update when workaround is discovered or issue is resolved.
     animation: ui/codex/content/projectgroove_rng
     title: codex_rules_projectgroove_rng_title
     text: codex_rules_projectgroove_rng_text_2
