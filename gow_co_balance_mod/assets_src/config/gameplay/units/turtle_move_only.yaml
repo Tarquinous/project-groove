@@ -13,7 +13,7 @@ unitClasses:
       - type.sea
     battleUnitCount: 4
     passiveMultiplier: 1.5
-    sightRange: 3
+    sightRange: 4
     scout: true
     isHiddenInCutsceneEditor: true
     isHidden: true
