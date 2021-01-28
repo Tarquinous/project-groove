@@ -9,6 +9,7 @@ Contributors:
 - Unicarn
 - FlySniper
 - CMAvelis
+- Emo Tarquin
 
 ## Changes:
 ### Commanders:
