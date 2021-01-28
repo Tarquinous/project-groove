@@ -54,7 +54,7 @@ units:
         effect: fx/bs_turtle_attack
         ranged: true
 
-  - class: turtle
+  - class: turtle_move_only
     enabled: true
     faction: felheim
     name: unit_name_turtle_felheim
@@ -82,8 +82,7 @@ units:
         effect: fx/bs_turtle_attack
         ranged: true
 
-
-  - class: turtle
+  - class: turtle_move_only
     enabled: true
     faction: heavensong
     name: unit_name_turtle_heavensong
@@ -111,9 +110,7 @@ units:
         effect: fx/bs_turtle_attack
         ranged: true
 
-
-
-  - class: turtle
+  - class: turtle_move_only
     enabled: true
     faction: floran
     name: unit_name_turtle_floran
@@ -140,5 +137,4 @@ units:
         hitDelay: 2.2
         effect: fx/bs_turtle_attack
         ranged: true
-
 ...
