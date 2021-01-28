@@ -65,4 +65,16 @@ en-GB:
 
   # Turtle
   unit_description_turtle: "Powerful naval unit, built to conquer the water. Half movement after waiting. Critical hit when in deep sea."
+  
+  # CODEX / COMMANDERS
+  codex_groove_description_caesar: "Caesar's majestic presence inspires all adjacent units to dig deep and have a second go.\n\nGroove Charge Speed: Slow."
+  codex_groove_description_mercia: "Mercia raises her sword to the sky and heals all surrounding allied units by 50%, overhealing all units up to 105%\n\nGroove Charge Speed: Fast."
+  codex_groove_description_nuru: "Nuru beams down a friendly unit in the heat of battle. You can only summon units normally found as a squadron (e.g. Dogs) and can currently recruit. You pay double gold for the unit, but no Mana.\n\nGroove Charge Speed: Medium."
+  codex_groove_description_ryota: "Ryota dashes through rows of enemies, dealing 50% of the damage he would inflict at full health. The damage decreases by 3% per row. Ryota can dash through neutral structures.\n\nGroove Charge Speed: Fast."
+  codex_groove_description_sigrid: "Sigrid flies up to 2 tiles away, before draining all health from an enemy unit, and adds it to her own health. \n\nGroove Charge Speed: Medium."
+  codex_groove_description_twins: "The twins have access to two successive Grooves: Scorching Fire and Cooling Water. \nFirst, you use Scorching Fire, starting a fire on a single tile. For three turns, the flaming area grows in size, and after four turns, it disappears. Any unit caught in the flames will be instantly defeated. \nAfterwards, you may optionally also use Cooling Water, covering an area with healing magic. Each turn, the area decreases in size, and after four turns it disappears. Any units left in the area at the start of the twins' turn are healed for 20% of their full health. \n\nGroove Charge Speed: Medium."
+  codex_groove_description_vesper: "Vesper can warp to anywhere on the map and summon a small shroud around her in thick, magical smoke for one turn. Units within this area cannot be targeted or counter-attacked. \n\nGroove Charge Speed: Slow."
+  codex_groove_description_darkmercia: "Dark Mercia raises her sword to the sky and drains all surrounding enemy units by 25%, healing herself, and overhealing up to 200%. \n\nGroove Charge Speed: Medium."
+  codex_groove_description_mercival: "Mercival diplomatically claims any enemy building to join his side at full strength, and steals 100 gold from the enemy. Cannot be used on Strongholds. \n\nGroove Charge Speed: Fast."
+  codex_groove_description_elodie": "Requiem entrances an enemy unit, bringing it under Elodie's control. \n\nGroove charge speed: Medium."
 ...
