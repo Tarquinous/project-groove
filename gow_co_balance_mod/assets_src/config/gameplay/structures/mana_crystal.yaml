@@ -26,19 +26,22 @@ units:
     faction: neutral
     name: structure_name_mana_crystal
     mapAnimation: units/mana_crystal/map_mana_crystal_cherrystone
-    battleAnimation: units/commanders/emeric/battle_crystal
     smallPortrait: units/commanders/emeric/portrait_crystal_small.png
     mediumPortrait: units/commanders/emeric/portrait_crystal_medium.png
-    mapSpeed: 4.0
     grabPos: [13, 14]
-    runsIn: false
-    deathMoveMin: 0
-    deathMoveMax: 0
     sounds:
       death: emeric/emericCrystalDie
       deathMap: unitDie
       deathMapNoBattle: emeric/emericCrystalDie
       hit: hitStone
       hitMap: hitStone
+    structureImage:
+      spriteSheet: backgrounds/city/city_background_full
+      farBackground: city_background_full_background_2
+      nearBackground: city_background_full_background_1
+      foreground: city_background_full_foreground
+      keeperPosition: [78, 95]
+      leftBannerOffset: [-6, 2]
+      rightBannerOffset: [0, 2]
 
 ...
